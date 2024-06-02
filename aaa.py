@@ -17,3 +17,7 @@ print("Hoc_git")
 
 # Đẩy các commit len git
 # git push
+
+
+# Nếu push lần đầu tiên
+# git push --set-upstream origin master

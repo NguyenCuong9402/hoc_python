@@ -1,7 +1,8 @@
 
-list_u = [["a"],"b","1", "5"]
-try:
-    list_u.pop(list_u.index("b"))
-except:
-    print("phần tử không có trong list")
-print(list_u)
+list_u = ["b","1", "5"]
+
+
+for u in list_u:
+    if u == "1":
+        print("Lỗi, bỏ qua code đằng sau. Yêu cầu nguời dùng làm lại")
+        continue

@@ -63,3 +63,12 @@ import uuid
 # gender = "nam"
 # if gender not in  ["nam", "nu"]:
 #     print("gioi tinh khong hop le")
+
+
+
+# Kiểm tra ngày sinh
+# Input ngày sinh (str)
+# Chuyển  ngày sinh (str) sang dạng datetime-> Ngày sinh là đúng
+# Lấy năm hiện tại (int) - năm sinh trên. (int)
+
+# Khi lưu thì anh dùng cái nào?

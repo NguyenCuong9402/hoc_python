@@ -32,10 +32,14 @@ while True:
     print("8. Hiển thị tổng lương phải trả hàng tháng cho Nhân Viên")
     print("9. Hiển thị tổng lương phải trả hàng tháng cho Trưởng Phòng")
     print("10. Hiển thị số nhân viên nam, số nhân viên nữ.")
-    print("11. Thoát")
+    print("11.Xoa nhan vien")
+    print("12. Thoát")
     danh_sach = int(input("Lựa Chọn Chức Năng: "))
 
     if danh_sach == 1:
+        if len(user) == 20:
+            print("Đã đủ nhân viên")
+            break
         ten = str(input("tên: ")).lower()
 
         # Validate tên

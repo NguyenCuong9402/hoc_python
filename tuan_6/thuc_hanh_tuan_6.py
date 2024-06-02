@@ -1,33 +1,65 @@
 import uuid
 
-# í dụ 1 người dùng:
+
+# Số lượng user tối đa 20,  chỉ 1 giám đốc, tuổi > 18
+
+# while True:
+#     print("1. Thêm User")
+#     print("2. Xem thông tin User")
+#     print("3. Sua thong tin nhan vien")
+#     print("4. Xoa nhan vien")
+#     print("5. Danh sách các nhân viên ở tỉnh:")
+#     print("6. Hiển thị số nhân viên nam/nữ.")
+#     print("6. Hiển thị số nhân viên có chuc vu (input)") # GD, TP, NV
+#     print("7. Thoát")
+
+
 # {
-#     "tên": "Nguyễn Ngọc Cương",
-#     "tuổi": 18,   # Tuyển nhân viên >= 18 tuổi
-#     "địa chỉ": "HY", # Giới hạn chỉ chọn HN, HY, HD, QN, HP, LC, YB, BN, HB ( Còn nếu ngoài các tỉnh sau thì print
-#                      # Không tuyển người ở {tỉnh nhập}
+#     "id": "abc",
+#     "email": "....@email.com"
+#     "birthday_date": "dd/mm/yy"
 #
-#     "giới tính": True, # True: nam, False: Nữ
-#     "chiều cao": 171,   # Yêu cầu chiều cao > 160
-#     "vị trí": "Nhân Viên",  # Giám đốc / Trưởng Phòng / Nhân Viên   # Chỉ có 1 giám đốc. Nếu đã có giám đốc thì
-#     # không thể thêm user mới và print Đã có giám đốc
-#     "tình trạng hôn nhân": False,  #True: đã kết hôn, False: chưa kết hôn.
-#     "lương": 100,
-#     "tài khoản": "cuong123",
-#     "mật khẩu": "1234567"
+#     "pass": ........ # Tren 8 ky tu
+#     "name ": "Nguyen Van A"
+#     "phone_number ": "0123456789"
+#     "address": "xa, huyen, tinh"
+#     "gender" : "nam/nu"
+#     "chuc_vu" : "........."
+#     "ngay_tao" : "dd/mm/yy h-m-s"
 # }
 
+# Tạo id
+# user_id = str(uuid.uuid4())
 
-while True:
-    print("1. Thêm User")
-    print("2. Xem thông tin User")
-    print("3. Danh sách các nhân viên ở tỉnh đã nhập")
-    print("4. Tăng/ giảm lương người dùng")
-    print("5. Danh sách nhân viên có lương")
-    print("6. Hiển thị tổng lương phải trả hàng tháng cho mọi người")
-    print("7. Hiển thị tổng số tiền phải trả trong 1 năm cho mọi người")
-    print("8. Hiển thị tổng lương phải trả hàng tháng cho Nhân Viên")
-    print("9. Hiển thị tổng lương phải trả hàng tháng cho Trưởng Phòng")
-    print("10. Hiển thị số nhân viên nam, số nhân viên nữ.")
-    print("11. Xoa nhan vien")
-    print("12. Thoát")
+# # xác định email
+# duoi_emails = ["@gmail.com", "@yahoo.com"]
+#
+# gmail = "@gmail.com"
+#
+# flag = False
+# for duoi_email in duoi_emails:
+#     if gmail.endswith(duoi_email) and len(gmail) > len(duoi_email):
+#         flag = True
+#         break
+# if flag is False:
+#     print("Email không hợp lệ")
+
+# xác định sđt hợp lệ
+# phone_number = "0a23456789"
+#
+# if len(phone_number) != 10:
+#     print("Số điện thoại không hợp lệ")
+#
+#
+# flag = True
+# for number in phone_number:
+#     if number not in '0123456789':
+#         flag = False
+#         break
+# if flag is False:
+#     print("Sđt không hợp lệ")
+
+
+# gender = "nam"
+# if gender not in  ["nam", "nu"]:
+#     print("gioi tinh khong hop le")

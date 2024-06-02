@@ -1,21 +1,19 @@
 import json
 import random
 
-# í dụ 1 người dùng:
+
 # {
-#     "tên": "Nguyễn Ngọc Cương",
-#     "tuổi": 18,   # Tuyển nhân viên >= 18 tuổi
-#     "địa chỉ": "HY", # Giới hạn chỉ chọn HN, HY, HD, QN, HP, LC, YB, BN, HB ( Còn nếu ngoài các tỉnh sau thì print
-#                      # Không tuyển người ở {tỉnh nhập}
+#     "id": "abc",
+#     "email": "....@email.com"
+#     "birthday_date": "dd/mm/yy"
 #
-#     "giới tính": True, # True: nam, False: Nữ
-#     "chiều cao": 171,   # Yêu cầu chiều cao > 160
-#     "vị trí": "Nhân Viên",  # Giám đốc / Trưởng Phòng / Nhân Viên   # Chỉ có 1 giám đốc. Nếu đã có giám đốc thì
-#     # không thể thêm user mới và print Đã có giám đốc
-#     "tình trạng hôn nhân": False,  #True: đã kết hôn, False: chưa kết hôn.
-#     "lương": 100,
-#     "tài khoản": "cuong123",
-#     "mật khẩu": "1234567"
+#     "pass": ........ # Tren 8 ky tu
+#     "name ": "Nguyen Van A"
+#     "phone_number ": "0123456789"
+#     "address": "xa, huyen, tinh"
+#     "gender" : "nam/nu"
+#     "chuc_vu" : "........."
+#     "ngay_tao" : "dd/mm/yy h-m-s"
 # }
 
 with open("baitapvn.json", "r") as f:

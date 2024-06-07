@@ -3,9 +3,11 @@ import base64
 import pytesseract
 from PIL import Image
 import os
-
+import uuid
 # URL của API
 url = "https://www.8kwin.cc/api/0.0/Home/GetCaptchaForLogin"
+
+api_login = "https://www.8kwin.net/api/0.0/Login/login"
 
 # Đặt đường dẫn tới tesseract.exe
 pytesseract.pytesseract.tesseract_cmd = r'C:\test-ocr\tesseract.exe'
@@ -17,6 +19,8 @@ def demo_imagetotext(path: str):
     return text[:4]
 
 
+user = "ledao2445"
+password = "Aovcl@123"
 # Gửi yêu cầu POST
 response = requests.post(url)
 
@@ -24,13 +28,14 @@ response = requests.post(url)
 if response.status_code == 200:
     data = response.json()
     image_base64 = data.get("image")
+    value_key = data.get("value")
 
     if image_base64:
         # Giải mã base64 thành nhị phân
         image_data = base64.b64decode(image_base64)
 
         # Lưu ảnh dưới dạng file với đường dẫn tương đối
-        image_path = "captcha_image.png"
+        image_path = f"{uuid.uuid4()}.png"
         with open(image_path, "wb") as file:
             file.write(image_data)
 
@@ -39,7 +44,15 @@ if response.status_code == 200:
 
         # OCR
         text = demo_imagetotext(absolute_image_path)
+        os.remove(absolute_image_path)
         print("Recognized text:", text)
+        payload ={
+          "account": user,
+          "checkCode": text,
+          "checkCodeEncrypt": "eaIJT4q5r+d1CRvckRW9KQ==",
+          "fingerprint": "ff5f37ba5c78f9db074ce69eb930e26a",
+          "password": password
+        }
     else:
         print("No image data found.")
 else:

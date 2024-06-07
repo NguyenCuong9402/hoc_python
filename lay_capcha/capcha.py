@@ -7,7 +7,6 @@ import uuid
 # URL của API
 url = "https://www.8kwin.cc/api/0.0/Home/GetCaptchaForLogin"
 
-api_login = "https://www.8kwin.net/api/0.0/Login/login"
 
 # Đặt đường dẫn tới tesseract.exe
 pytesseract.pytesseract.tesseract_cmd = r'C:\test-ocr\tesseract.exe'
@@ -50,9 +49,12 @@ if response.status_code == 200:
           "account": user,
           "checkCode": text,
           "checkCodeEncrypt": value_key,
-          "fingerprint": "ff5f37ba5c78f9db074ce69eb930e26a",
+          "fingerprint": str(uuid.uuid4()),
           "password": password
         }
+        api_login = "https://www.8kwin.net/api/0.0/Login/login"
+        response_login = requests.post(api_login, json=payload)
+        print(response_login.json())
     else:
         print("No image data found.")
 else:

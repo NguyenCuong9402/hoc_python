@@ -60,7 +60,12 @@ if response.status_code == 200:
         }
         api_login = "https://www.8kwin.net/api/0.0/Login/login"
         response_login = requests.post(api_login, json=payload)
-        print(response_login.json())
+        if response_login.status_code == 200:
+            print(f"Đăng nhập thành công tài khoản {user}")
+            print("Data:", response_login.json())
+        else:
+            print("Đăng nhập thành công")
+
     else:
         print("No image data found.")
 else:

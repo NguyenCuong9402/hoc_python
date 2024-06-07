@@ -49,7 +49,7 @@ if response.status_code == 200:
         payload ={
           "account": user,
           "checkCode": text,
-          "checkCodeEncrypt": "eaIJT4q5r+d1CRvckRW9KQ==",
+          "checkCodeEncrypt": value_key,
           "fingerprint": "ff5f37ba5c78f9db074ce69eb930e26a",
           "password": password
         }

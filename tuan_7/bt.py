@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 
-from tuan_7.helper import tim_dia_chia, hien_thi_so_nv
+from tuan_7.helper import tim_dia_chia, hien_thi_so_nv, sua_email
 
 with open("baitapvn.json", "r") as f:
     users = json.load(f)
@@ -118,17 +118,17 @@ while True:
                 sua_thongtin = int(input("Lựa Chọn Chức Năng: "))
                 if sua_thongtin == 1:
                     email = input("email: ")
-                    duoi_emails = ['@gmail.com', '@yahoo.com', '@hotmail.com']
-                    flag = False
-                    for duoi_email in duoi_emails:
-                        if email.endswith(duoi_email) and len(email) > len(duoi_email):
-                            flag = True
-                            user['email'] = email
-                            break
 
-                    if flag is False:
+                    result = sua_email(email=email, user=user)
+
+                    if result == 1:
+                        print("Đã sửa thành công")
+                        with open("baitapvn.json", "w") as f:
+                            json.dump(users, f, indent=4)
+                    else:
                         print("Email không hợp lệ")
-                        continue
+                    continue
+
                 if sua_thongtin == 2:
                     ngay_sinh = input("Nhập Ngày Sinh(dd/mm/yy): ")
                     try:

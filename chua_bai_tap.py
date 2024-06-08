@@ -48,20 +48,3 @@ while True:
         print("Thoát")
         break
 
-
-
-
-
-result = {
-    "find": True ,# false: khong thay, true: thay,
-    "data": data_user
-}
-
-if result['find'] == True:
-    print("tim thay nguoi dung", result["data"])
-else:
-    print("khong  tim thay")
-# {
-#     "find": False # false: khong thay, true: thay,
-#     "data": []
-# }

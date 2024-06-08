@@ -101,32 +101,35 @@ while True:
         nhap_user = input("Thông tin nhân viên muốn tìm: ").lower()
         flag = False
         for tim_user in users:
-            if tim_user['name'] == nhap_user:
+            if tim_user['id'] == nhap_user:
                 flag = True
                 print(tim_user)
         if flag is False:
             print("Không Có Thông Tin Nhân Viên")
             continue
     elif lua_chon == 3:
-        sua_user = input("Nhập Thông Tin Muốn Sửa: ").lower()
+        sua_user = input("Nhập Thông Tin Muốn Sửa: ")
+        print("-----------------Lựa chọn thông tin muốn sửa--------------------------")
+        print("1.email  2.ngày sinh  3.mật khẩu  4.Họ Tên 5.số điện thoại 6.giới tính "
+              "7.nơi ở 8.chức vụ")
+        sua_thongtin = int(input("Lựa Chọn Chức Năng: "))
         for user in users:
-            if user['name'] == sua_user:
+            if user['id'] == sua_user:
                 print(user)
-                print("-----------------Lựa chọn thông tin muốn sửa--------------------------")
-                print("1.email  2.ngày sinh  3.mật khẩu  4.Họ Tên 5.số điện thoại 6.giới tính "
-                      "7.nơi ở 8.chức vụ")
-                sua_thongtin = int(input("Lựa Chọn Chức Năng: "))
                 if sua_thongtin == 1:
                     email = input("email: ")
 
                     result = sua_email(email=email, user=user)
 
-                    if result == 1:
+                    if result['da_sua'] == 1:
+                        user = result['data']
                         print("Đã sửa thành công")
                         with open("baitapvn.json", "w") as f:
                             json.dump(users, f, indent=4)
                     else:
                         print("Email không hợp lệ")
+
+                    enter = input('Enter để tiếp tiếp tục chương trình')
                     continue
 
                 if sua_thongtin == 2:

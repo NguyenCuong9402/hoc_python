@@ -1,1 +1,12 @@
-[]
+[{
+    "id": "07365979-070c-4c3b-9db2-8b77cd3ec7be",
+    "email": "cuong123456@gmail.com",
+    "birthday_date": "9/4/2002",
+    "pass": "123456789",
+    "name": "nguyen ngoc cuong",
+    "phone_number": "0327241194",
+    "address": "hung yen",
+    "gender": "nam",
+    "chuc_vu": "nv",
+    "ngay_tao": "15:33 8/6/2024"
+}]

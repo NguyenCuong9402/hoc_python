@@ -59,4 +59,44 @@ def tim_dia_chia(dia_chi: str, ten: str, password: str, user_name: str, gioi_tin
     return list_result
 
 
+def sua_email(email: str, user: dict):
+    duoi_emails = ['@gmail.com', '@yahoo.com', '@hotmail.com']
+    flag = False
+    for duoi_email in duoi_emails:
+        if email.endswith(duoi_email) and len(email) > len(duoi_email):
+            flag = True
+            user['email'] = email
+            break
 
+    if flag is True:
+        result = {
+            "da_sua": 1,
+            "data": user
+        }
+    else:
+        result = {
+            "da_sua": 0,
+            "data": user
+        }
+    return result
+
+
+
+
+
+
+
+# ##########
+# result = {
+#     "find": True ,# false: khong thay, true: thay,
+#     "data": data_user
+# }
+#
+# if result['find'] == True:
+#     print("tim thay nguoi dung", result["data"])
+# else:
+#     print("khong  tim thay")
+# # {
+# #     "find": False # false: khong thay, true: thay,
+# #     "data": []
+# # }

@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 
-from tuan_7.helper import tim_dia_chia, hien_thi_so_nv
+from tuan_7.helper import tim_dia_chia, hien_thi_so_nv, sua_email
 
 with open("baitapvn.json", "r") as f:
     users = json.load(f)
@@ -101,34 +101,37 @@ while True:
         nhap_user = input("Thông tin nhân viên muốn tìm: ").lower()
         flag = False
         for tim_user in users:
-            if tim_user['name'] == nhap_user:
+            if tim_user['id'] == nhap_user:
                 flag = True
                 print(tim_user)
         if flag is False:
             print("Không Có Thông Tin Nhân Viên")
             continue
     elif lua_chon == 3:
-        sua_user = input("Nhập Thông Tin Muốn Sửa: ").lower()
+        sua_user = input("Nhập Thông Tin Muốn Sửa: ")
+        print("-----------------Lựa chọn thông tin muốn sửa--------------------------")
+        print("1.email  2.ngày sinh  3.mật khẩu  4.Họ Tên 5.số điện thoại 6.giới tính "
+              "7.nơi ở 8.chức vụ")
+        sua_thongtin = int(input("Lựa Chọn Chức Năng: "))
         for user in users:
-            if user['name'] == sua_user:
+            if user['id'] == sua_user:
                 print(user)
-                print("-----------------Lựa chọn thông tin muốn sửa--------------------------")
-                print("1.email  2.ngày sinh  3.mật khẩu  4.Họ Tên 5.số điện thoại 6.giới tính "
-                      "7.nơi ở 8.chức vụ")
-                sua_thongtin = int(input("Lựa Chọn Chức Năng: "))
                 if sua_thongtin == 1:
                     email = input("email: ")
-                    duoi_emails = ['@gmail.com', '@yahoo.com', '@hotmail.com']
-                    flag = False
-                    for duoi_email in duoi_emails:
-                        if email.endswith(duoi_email) and len(email) > len(duoi_email):
-                            flag = True
-                            user['email'] = email
-                            break
 
-                    if flag is False:
+                    result = sua_email(email=email, user=user)
+
+                    if result['da_sua'] == 1:
+                        user = result['data']
+                        print("Đã sửa thành công")
+                        with open("baitapvn.json", "w") as f:
+                            json.dump(users, f, indent=4)
+                    else:
                         print("Email không hợp lệ")
-                        continue
+
+                    enter = input('Enter để tiếp tiếp tục chương trình')
+                    continue
+
                 if sua_thongtin == 2:
                     ngay_sinh = input("Nhập Ngày Sinh(dd/mm/yy): ")
                     try:

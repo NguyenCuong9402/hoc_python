@@ -42,3 +42,16 @@ def hien_thi_so_nv():
     elif chucvu == "GD":
         ket_qua = f"Số giám đốc: {so_nhan_gd}"
     return ket_qua
+
+def tim_dia_chia(dia_chi: str):
+    with open("baitapvn.json", "r") as f:
+        users = json.load(f)
+
+    list_result = []
+    for user in users:
+        if user['address'] == dia_chi:
+            list_result.append({
+                "user_name": user['name'],
+                "dia_chi": user['address']
+            })
+    return list_result

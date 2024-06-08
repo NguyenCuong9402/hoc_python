@@ -3,7 +3,8 @@ import json
 import os
 from datetime import datetime
 
-from tuan_7.fuction_1 import hien_thi_so_nv
+
+from tuan_7.helper import tim_dia_chia, hien_thi_so_nv
 
 with open("baitapvn.json", "r") as f:
     users = json.load(f)
@@ -199,12 +200,14 @@ while True:
 
     #     print("5. Danh sách các nhân viên ở tỉnh:")
     elif lua_chon == 5:
-        # -> Hiển thị thêm các tỉnh có thể chọn.
         dia_chi = input("Nhầm Tỉnh Muốn Tìm : ")
-        for user in users:
-            if user['address'] == dia_chi:
-                print("Các Nhân Viên Thuộc Tỉnh", dia_chi, "Là: ", user)
-
+        # -> Hiển thị thêm các tỉnh có thể chọn.
+        result = tim_dia_chia(dia_chi=dia_chi)
+        if len(result) == 0:
+            print("không nhân viên nào ở tỉnh trên")
+        else:
+            for tt in result:
+                print(tt)
         continue
 
     #     print("6. Hiển thị số nhân viên nam/nữ.")

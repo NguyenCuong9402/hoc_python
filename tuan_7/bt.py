@@ -200,9 +200,9 @@ while True:
 
     #     print("5. Danh sách các nhân viên ở tỉnh:")
     elif lua_chon == 5:
-        dia_chi = input("Nhầm Tỉnh Muốn Tìm : ")
+        dia_chi_cua_toi = input("Nhầm Tỉnh Muốn Tìm : ")
         # -> Hiển thị thêm các tỉnh có thể chọn.
-        result = tim_dia_chia(dia_chi=dia_chi)
+        result = tim_dia_chia(dia_chi=dia_chi_cua_toi)
         if len(result) == 0:
             print("không nhân viên nào ở tỉnh trên")
         else:

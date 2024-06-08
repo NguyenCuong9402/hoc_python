@@ -36,14 +36,16 @@ def hien_thi_so_nv():
     so_nhan_tp = len([chuc_vu2 for chuc_vu2 in users if chuc_vu2['chuc_vu'] == 'trưởng phòng'])
     so_nhan_gd = len([chuc_vu2 for chuc_vu2 in users if chuc_vu2['chuc_vu'] == 'giám đốc'])
     if chucvu == "NV":
-        ket_qua=  f"Số nhân viên: {so_nhan_nv}"
+        ket_qua= f"Số nhân viên: {so_nhan_nv}"
     elif chucvu == "TP":
         ket_qua = f"Số trưởng phòng: {so_nhan_tp}"
     elif chucvu == "GD":
         ket_qua = f"Số giám đốc: {so_nhan_gd}"
     return ket_qua
 
-def tim_dia_chia(dia_chi: str):
+
+def tim_dia_chia(dia_chi: str, ten: str, password: str, user_name: str, gioi_tinh: int, chuc_vuL: str):
+
     with open("baitapvn.json", "r") as f:
         users = json.load(f)
 
@@ -55,3 +57,6 @@ def tim_dia_chia(dia_chi: str):
                 "dia_chi": user['address']
             })
     return list_result
+
+
+

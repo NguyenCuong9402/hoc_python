@@ -17,10 +17,14 @@
 # Hệ thống có thể tìm kiếm sách theo tên, tác giả, thể loại, và kiểm tra tình trạng mượn/trả của sách.
 # Tính năng:
 # Thêm sách mới
-# Cập nhật thông tin sách
+# Cập nhật thông tin sách :
+        #1) Thông tin sách
+        #) Thông tin tình trạng: Cho mượn rồi thì người khác mượn thông báo: Đã cho mượn
 # Xóa sách
 # Tìm kiếm sách
 # Quản lý mượn trả sách
+
+# Mỗi người dùng chỉ mượn tối đa 3 cuốn sách
 
 
 ### Gợi ý thiết kế lưu data cho Quản lý thư viện sách
@@ -28,11 +32,11 @@
 [
     {
         "id": "",
-        "ten":"",
-        "tac gia":"",
-        "ngay xuat ban":"",
+        "ten_sach":"",
+        "tac_gia":"",
+        "ngay_xuat_ban":"",
         "tinh_trang":{
-            "cho_muon": True,
+            "cho_muon": True/False,
             "ngay_cho_muon":"",
             "id_nguoi_muon":""
         }

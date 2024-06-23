@@ -13,11 +13,45 @@
 
 
 # 1. Quản lý thư viện sách
-# Mô tả: Xây dựng một hệ thống quản lý thư viện sách, cho phép thêm, xóa, sửa thông tin sách. Hệ thống có thể tìm kiếm sách theo tên, tác giả, thể loại, và kiểm tra tình trạng mượn/trả của sách.
+# Mô tả: Xây dựng một hệ thống quản lý thư viện sách, cho phép thêm, xóa, sửa thông tin sách.
+# Hệ thống có thể tìm kiếm sách theo tên, tác giả, thể loại, và kiểm tra tình trạng mượn/trả của sách.
 # Tính năng:
 # Thêm sách mới
 # Cập nhật thông tin sách
 # Xóa sách
 # Tìm kiếm sách
 # Quản lý mượn trả sách
+
+
+### Gợi ý thiết kế lưu data cho Quản lý thư viện sách
+##Sach
+[
+    {
+        "id": "",
+        "ten":"",
+        "tac gia":"",
+        "ngay xuat ban":"",
+        "tinh_trang":{
+            "cho_muon": True,
+            "ngay_cho_muon":"",
+            "id_nguoi_muon":""
+        }
+    }
+]
+
+### User
+{
+    "id": {
+        "ten":"",
+        "ngay_sinh":"",
+        "dia_chi":"",
+        "sach_da_muon":[
+            {"id_sach":"",
+             "ngay_muon":""}
+        ]
+
+    }
+}
+
+
 

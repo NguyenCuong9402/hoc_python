@@ -17,13 +17,6 @@ def demo_imagetotext(path: str):
     text = text.replace('/', '').replace("\n", '')
     return text[:4]
 
-# list_user = [
-#     {
-#         "user": "ledao2445",
-#         "password": "Aovcl@123"
-#     }
-# ]
-
 user = "ledao2445"
 password = "Aovcl@123"
 # Gửi yêu cầu POST

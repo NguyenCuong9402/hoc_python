@@ -1,1 +1,18 @@
-[]
+{
+  "list_sach": [{
+        "id": "",
+        "ten_sach":"",
+        "tac_gia":"",
+        "ngay_xuat_ban":"",
+        "tinh_trang":{
+            "cho_muon": true,
+            "ngay_cho_muon":"",
+            "id_nguoi_muon":""
+        }
+  }],
+  "dict_user": {
+    "id":{ }
+  },
+  "so_sach_toi_da": 5
+
+}

@@ -152,5 +152,3 @@ def chuc_nang_tra_sach(id_user : str, id_sach: str):
         print("Người dùng không mượn sách trên")
         return "0"
 
-
-

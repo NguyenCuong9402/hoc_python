@@ -1,0 +1,77 @@
+{
+    "list_sach": [
+        {
+            "id": "c3c93bdb-04fe-4f6a-a521-c573d3156937",
+            "ten_sach": "toan",
+            "trang_thai": {
+                "cho_muon": false,
+                "date_time": "",
+                "id_user": ""
+            }
+        },
+        {
+            "id": "4a7fd78f-cb66-486e-9de7-0f272f955074",
+            "ten_sach": "van",
+            "trang_thai": {
+                "cho_muon": false,
+                "date_time": "",
+                "id_user": ""
+            }
+        },
+        {
+            "id": "374bd1be-6656-42da-a2e8-51417a228791",
+            "ten_sach": "anh",
+            "trang_thai": {
+                "cho_muon": false,
+                "date_time": "",
+                "id_user": ""
+            }
+        },
+        {
+            "id": "123d5e3b-82b6-4aea-b6fe-b742ca58374d",
+            "ten_sach": "su",
+            "trang_thai": {
+                "cho_muon": false,
+                "date_time": "",
+                "id_user": ""
+            }
+        },
+        {
+            "id": "3d839409-e252-4dcf-80d9-316131ea232e",
+            "ten_sach": "dia",
+            "trang_thai": {
+                "cho_muon": true,
+                "date_time": "2024-06-30 15:34:09.387576",
+                "id_user": "37fcafd3-26e9-43e8-8696-fdedbb2b6220"
+            }
+        }
+    ],
+    "list_users": [
+        {
+            "id": "37fcafd3-26e9-43e8-8696-fdedbb2b6220",
+            "ho_ten": "Anh Tu",
+            "danh_sach_muon": [
+                {
+                    "id_sach": "3d839409-e252-4dcf-80d9-316131ea232e",
+                    "ngay_muon": "2024-06-30 15:34:09.387576"
+                }
+            ]
+        },
+        {
+            "id": "4fb30f8c-ee49-4d9e-b4b5-1d96efd8ea5d",
+            "ho_ten": "Chi Ngan",
+            "danh_sach_muon": []
+        },
+        {
+            "id": "f8edb2b3-c7c0-4ea5-ace2-50c82f1ff3fd",
+            "ho_ten": "Em Long",
+            "danh_sach_muon": []
+        },
+        {
+            "id": "dcf2df7f-5811-4340-bd5c-ed1d58a4b780",
+            "ho_ten": "Cuong",
+            "danh_sach_muon": []
+        }
+    ],
+    "so_sach_toi_da": 3
+}
